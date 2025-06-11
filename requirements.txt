@@ -2,3 +2,4 @@ numpy
 matplotlib
 ipywidgets
 streamlit
+pip install -r requirements.txt
