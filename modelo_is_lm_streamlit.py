@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
+st.set_page_config(page_title="EcoGraph - Emilia Arriaga")
 
 def mercado_dinero(Y, P, B, R, e, ax, limite_superior_i):
     k = 0.5
