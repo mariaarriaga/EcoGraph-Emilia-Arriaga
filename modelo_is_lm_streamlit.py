@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import streamlit as st
 st.set_page_config(page_title="EcoGraph - Emilia Arriaga")
 
-def mercado_dinero(Y, P, B, R, e, ax, limite_superior_i):
+def mercado_dinero(Y, P, B, r, e, ax, limite_superior_i):
     k = 0.5
     h = 100
-    mm = (e + 1) / (e + R)
+    mm = (e + 1) / (e + r)
     M = mm * B               # Oferta monetaria nominal M
     L = M / P                # Oferta monetaria real L = M/P
 
@@ -71,7 +71,7 @@ def main():
     Y = st.slider("Ingreso (Y)", 500, 1000, 1000, step=100)
     P = st.slider("Nivel de Precios (P)", 1.0, 20.0, 10.0)
     B = st.slider("Base Monetaria (B)", 500, 5000, 2000, step=100)
-    R = st.slider("Coeficiente de Encaje (R)", 0.01, 1.0, 0.1, step=0.01)
+    r = st.slider("Coeficiente de Encaje (R)", 0.01, 1.0, 0.1, step=0.01)
     e = st.slider("E/D (e)", 0.01, 1.0, 0.1, step=0.01)
     c = st.slider("Propensión Marginal a Consumir (c)", 0.1, 1.0, 0.8, step=0.05)
     t = st.slider("Tasa Impositiva (t)", 0.0, 0.5, 0.2, step=0.05)
@@ -86,14 +86,14 @@ def main():
 
     # Cálculo del límite superior de i para los gráficos
     k = 0.5
-    mm = (e + 1) / (e + R)
+    mm = (e + 1) / (e + r)
     M = mm * B
     L = M / P
     i_max_mdinero = (k * Y) / 100 * 1.2
     i_max_inversion = (I0 / b) * 1.2
     limite_superior_i = max(i_max_mdinero, i_max_inversion)
 
-    i_eq = mercado_dinero(Y, P, B, R, e, axs[0], limite_superior_i)
+    i_eq = mercado_dinero(Y, P, B, r, e, axs[0], limite_superior_i)
     demanda_inversion(I0, b, i_eq, axs[1], limite_superior_i)
     mercado_bienes(1000, c, t, I0, G, X, m, i_eq, b, axs[2])
 
