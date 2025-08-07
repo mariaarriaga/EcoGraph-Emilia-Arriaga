@@ -72,7 +72,7 @@ def main():
     P = st.slider("Nivel de Precios (P)", 1.0, 20.0, 10.0)
     B = st.slider("Base Monetaria (B)", 500, 5000, 2000, step=100)
     R = st.slider("Coeficiente de Encaje (R)", 0.01, 1.0, 0.1, step=0.01)
-    e = st.slider("Tipo de Cambio (e)", 0.01, 1.0, 0.1, step=0.01)
+    e = st.slider("E/D (e)", 0.01, 1.0, 0.1, step=0.01)
     c = st.slider("Propensión Marginal a Consumir (c)", 0.1, 1.0, 0.8, step=0.05)
     t = st.slider("Tasa Impositiva (t)", 0.0, 0.5, 0.2, step=0.05)
     I0 = st.slider("Inversión Autónoma (I0)", 50, 300, 150, step=10)
