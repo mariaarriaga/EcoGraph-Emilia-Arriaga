@@ -71,7 +71,7 @@ def main():
     Y = st.slider("Ingreso (Y)", 500, 1000, 1000, step=100)
     P = st.slider("Nivel de Precios (P)", 1.0, 20.0, 10.0)
     B = st.slider("Base Monetaria (B)", 500, 5000, 2000, step=100)
-    r = st.slider("Coeficiente de Encaje (R)", 0.01, 1.0, 0.1, step=0.01)
+    r = st.slider("Coeficiente de Encaje (r)", 0.01, 1.0, 0.1, step=0.01)
     e = st.slider("E/D (e)", 0.01, 1.0, 0.1, step=0.01)
     c = st.slider("Propensión Marginal a Consumir (c)", 0.1, 1.0, 0.8, step=0.05)
     t = st.slider("Tasa Impositiva (t)", 0.0, 0.5, 0.2, step=0.05)
